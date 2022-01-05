@@ -1,0 +1,28 @@
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+/* Show it's not fixed to the top */
+body {
+  min-height: 75rem;
+}
+
+#sourceTA {
+  display: block;
+}
+#targetDiv {
+  border: 1px dashed #333333;
+  height: 100%;
+  overflow: scroll;
+}
+
+.wrapper {
+  padding: 20px;
+  margin: 15px 0;
+  background-color: #0f9d58;
+}
+textarea {
+  font-size: 20px;
+  width: 100%;
+}

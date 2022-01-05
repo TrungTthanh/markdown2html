@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Nguyen Trung Thanh">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Markdown 2 Html</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">    
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <script src="showdown/showdown.min.js"></script>
+  <script src="js/script.js"></script>
+  <body>
+    
+<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Markdown 2 Html</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav me-auto mb-2 mb-md-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container">
+  <div class="bg-light p-5 rounded">
+    <h1>Markdown 2 Html example</h1>
+    <p class="lead">This is an example of converting from Markdown to Html</p>
+    <div class="row">
+      <div class="col-12 col-sm-5">
+        <input id="myFile" type="file" accept=".md" class="form-control" />
+        <textarea id="sourceTA" cols="30" rows="15">          
+        </textarea>
+      </div>
+      <div class="col-12 col-sm-2 text-center">
+        <span class="m-2">
+          <button id="runBtn" onClick="run()" class="btn btn-lg btn-primary" role="button">Convert</button>  
+        </span>
+      </div>
+      <div class="col-12 col-sm-5">
+        <div id="targetDiv"></div>
+      </div>
+    </div>
+
+  </div>
+</main>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>      
+    <script>
+      const fileSelector = document.getElementById('myFile');
+      fileSelector.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if(file)
+        {
+          var reader = new FileReader();
+          reader.onload = function(e){
+            var textArea = document.getElementById("sourceTA");
+            textArea.value = e.target.result;
+          };
+          reader.readAsText(file);
+        }
+      });
+    </script>
+  </body>
+</html>
